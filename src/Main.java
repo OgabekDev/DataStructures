@@ -1,38 +1,22 @@
-import HashMap.HashTable;
-import Queue.StackQueue;
-import Tree.BinaryTree;
+import Graph.WeightedGraph;
+import Trie.TrieArray;
 
 public class Main {
     public static void main(String[] args) {
 
-        var tree = new BinaryTree();
+        var weightedGraph = new WeightedGraph();
 
-        tree.insert(25);
-        tree.insert(15);
-        tree.insert(10);
-        tree.insert(4);
-        tree.insert(12);
-        tree.insert(22);
-        tree.insert(18);
-        tree.insert(24);
-        tree.insert(50);
-        tree.insert(35);
-        tree.insert(31);
-        tree.insert(44);
-        tree.insert(70);
-        tree.insert(66);
-        tree.insert(90);
+        weightedGraph.addEdge("a", "b", 4);
+        weightedGraph.addEdge("b", "c", 1);
+        weightedGraph.addEdge("a", "c", 2);
+        weightedGraph.addEdge("b", "d", 5);
+        weightedGraph.addEdge("c", "d", 8);
+        weightedGraph.addEdge("c", "e", 10);
+        weightedGraph.addEdge("d", "e", 2);
+        weightedGraph.addEdge("d", "z", 6);
+        weightedGraph.addEdge("e", "z", 5);
 
-        tree.traversePreOrder();
-        System.out.println();
-        tree.traverseInOrder();
-        System.out.println();
-        tree.traversePostOrder();
-        System.out.println();
-        tree.traverseLevelOrder();
-        System.out.println();
-        System.out.println("tree.height() = " + tree.height());
-        System.out.println("tree.find(10) = " + tree.find(99));
+        weightedGraph.print();
 
     }
 
